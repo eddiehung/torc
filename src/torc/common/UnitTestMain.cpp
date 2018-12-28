@@ -23,6 +23,8 @@
 /// \brief Prototype for Boost.Test bool init_unit_test(void).
 bool init_unit_test(void);
 #include <boost/test/unit_test.hpp>
+#include <boost/test/tree/visitor.hpp>
+#include <boost/test/tree/traverse.hpp>
 #include "torc/common/DirectoryTree.hpp"
 #include <iostream>
 
@@ -72,7 +74,7 @@ public:
 std::cout << "keeping case  " << name << std::endl;
 			useTest(inTestCase);
 		} else {
-			inTestCase.p_enabled.set(false);
+			//inTestCase.p_enabled.set(false);
 			boost::unit_test::framework::master_test_suite().remove(inTestCase.p_id);
 std::cout << "pruning case  " << name << std::endl;
 		}
@@ -90,7 +92,7 @@ std::cout << "pruning case  " << name << std::endl;
 //std::cout << "leaving test suite " << getFullyQualifiedPath() << std::endl;
 		// if nobody needs this test suite, remove it
 		if(!mTestSuiteUsed.back()) {
-			inTestSuite.p_enabled.set(false);
+			//inTestSuite.p_enabled.set(false);
 			mTestSuitePruningIDs.push_back(inTestSuite.p_id);
 			std::cout << "pruning suite " << getFullyQualifiedPath() << std::endl;
 		}
@@ -108,7 +110,7 @@ public:
 			"architecture/iterate_configmaps"
 			"bitstream/VirtexEMapUnitTest"
 		;
-		inTestCase.p_enabled.set((enabled.find(inTestCase.p_name.get()) != std::string::npos));
+		//inTestCase.p_enabled.set((enabled.find(inTestCase.p_name.get()) != std::string::npos));
 	//	std::string disabled = 
 	//		"architecture/iterate_configmaps"
 	//	;
@@ -163,4 +165,4 @@ struct TestFixture {
 	}
 };
 /// \brief Global test fixture to request desired logging level from Boost.Test.
-BOOST_GLOBAL_FIXTURE(TestFixture)
+BOOST_GLOBAL_FIXTURE(TestFixture);

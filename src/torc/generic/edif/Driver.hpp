@@ -133,7 +133,7 @@ inline Error Driver::getParserError() const {
 }
 
 inline bool Driver::getIsParserErrorSet() const {
-	return mErrorObj;
+	return static_cast<bool>(mErrorObj);
 }
 
 } // namespace generic

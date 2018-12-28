@@ -10341,7 +10341,7 @@ namespace torc { namespace generic {
             else
             {
                 port = view->findPort(name);
-                bExistingPortFound = port;
+                bExistingPortFound = static_cast<bool>(port);
             }
             if(bExistingPortFound)
             {
@@ -10969,7 +10969,7 @@ namespace torc { namespace generic {
             else
             {
                 port = view->findPort(name);
-                bExistingPortFound = port;
+                bExistingPortFound = static_cast<bool>(port);
             }
             if(bExistingPortFound)
             {
