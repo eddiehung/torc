@@ -32,6 +32,8 @@
 #include <boost/random/variate_generator.hpp>
 #include <iostream>
 
+#include <iostream>
+
 namespace torc {
 namespace placer {
 
