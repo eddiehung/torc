@@ -23,8 +23,9 @@
 /// \brief Prototype for Boost.Test bool init_unit_test(void).
 bool init_unit_test(void);
 #include <boost/test/unit_test.hpp>
-#include <boost/test/tree/visitor.hpp>
+#if BOOST_VERSION > 105800
 #include <boost/test/tree/traverse.hpp>
+#endif
 #include "torc/common/DirectoryTree.hpp"
 #include <iostream>
 
